@@ -10,10 +10,17 @@ function Heading(props) {
 }
 
 class Heading2 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+    };
+  }
   render() {
+    const {message} = this.props;
     return (
       <View>
-        <Text>{this.props.message}</Text>
+        <Text>{message}</Text>
       </View>
     );
   }
