@@ -1,16 +1,28 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-function HelloWorldApp() {
+function Heading(props) {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text>Hello, world!</Text>
+    <View>
+      <Text>{props.message}</Text>
     </View>
   );
 }
-export default HelloWorldApp;
+
+class Heading2 extends React.Component {
+  render() {
+    return (
+      <View>
+        <Text>{this.props.message}</Text>
+      </View>
+    );
+  }
+}
+export default function HelloWorldApp() {
+  return (
+    <View>
+      <Heading message={'This is text of Heading from props'} />
+      <Heading2 message={'This is text of Heading2 from props'} />
+    </View>
+  );
+}
